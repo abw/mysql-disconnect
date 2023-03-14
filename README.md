@@ -56,7 +56,7 @@ creates a new one.
 
 These commands creates a MySQL 8 database in a docker container with a 10s
 timeout.  You'll need to have [docker](https://www.docker.com/) installed
-on yoru system.
+on your system.
 
 There are some scripts in the `bin` directory to help with testing.  They're
 mostly just wrappers around the relevant `docker` commands which I tend to
@@ -121,6 +121,12 @@ bring it down with:
 $ bin/down
 ```
 
+You can delete the docker image and database data with this script:
+
+```bash
+$ bin/clean
+```
+
 ## Running the Test Scripts
 
 First install the dependencies.
@@ -134,7 +140,8 @@ $ cd ..
 NOTE: you need to run the script from the parent directory so that `dotenv`
 can find the `.env` file.s
 
-The first script `01_connection.js` uses a direct connection to the database.
+The first script [01_connection.js](jsapp/01_connection.js) uses a direct
+connection to the database.
 
 ```js
 const connection = await mysql.createConnection(config);
@@ -168,8 +175,9 @@ Error: Can't add new command when connection is in closed state
 }
 ```
 
-The second script uses a connection pool.  It acquires a connection from the
-pool and then performs the same actions as above.
+The second script [02_pool_connection.js](jsapp/02_pool_connection.js)
+uses a connection pool.  It acquires a connection from the pool and then
+performs the same actions as above.
 
 ```js
 const pool = await mysql.createPool({
@@ -204,7 +212,8 @@ Error: Can't add new command when connection is in closed state
 }
 ```
 
-The third script executes all commands via the pool.
+The third script [03_pool.js](jsapp/03_pool.js) executes all commands via the
+pool.
 
 ```js
 async function withPool() {
@@ -229,7 +238,8 @@ adding thing-3
 added thing-3 as #106
 ```
 
-The fourth script is one using my own database library,
+The fourth script [04_badger_db.js](jsapp/04_badger_db.js) is one using my
+own database library,
 [badger-database](https://www.npmjs.com/package/@abw/badger-database)
 which is a wrapper around `mysql2` (and also supports Postgres and sqlite).
 
@@ -241,11 +251,12 @@ a workaround in version 1.1.26.
 The simple solution is to run queries through the pool object.
 
 In my case I couldn't do that.  The `badger-database` library uses `Pool`
-from [tarn](https://www.npmjs.com/package/tarn) for the connection pool.
+from [tarn](https://www.npmjs.com/package/tarn) for the connection pool
+so that it can work with MySQL, Postgres and SQLite.
 
-It supports a `validate()` method which checks if the connection is valid.
-If the connection is no longer valid it is removed from the pool and a new
-connection is created.
+The tarn Pool supports a `validate()` method which checks if the connection
+is valid.  If the connection is no longer valid it is removed from the pool
+and a new connection is created.
 
 The code looks something like this:
 
@@ -272,8 +283,8 @@ and the MySQL specific part is [here](https://github.com/abw/badger-database-js/
 The `_closing` flag is set in the `end()` function of `connection.js`
 (see [here](https://github.com/sidorares/node-mysql2/blob/master/lib/connection.js#L893)).
 The `end()` function is called when the `end` event is emitted.  This happens
-when the stream ends, which (I assume) is what happens when the connection
-times out.
+when the stream ends, which is what happens when the MySQL connection times
+out.
 
 So if `connection.connection._closing` is true then the connection needs to
 be renewed.
