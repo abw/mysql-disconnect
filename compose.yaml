@@ -1,0 +1,20 @@
+services:
+  database:
+    image: database
+    build: ./database
+    volumes:
+      - ./database/data:/var/lib/mysql
+      - ./database/config:/etc/mysql/conf.d
+    networks:
+      - $NETWORK
+    hostname: $DATABASE_HOSTNAME
+    ports:
+      - $HOST_DATABASE_PORT:3306
+    environment:
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD
+
+networks:
+  test-net:

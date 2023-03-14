@@ -1,0 +1,171 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@abw/badger-database': 1.1.26
+  dotenv: ^16.0.3
+  mysql2: ^3.2.0
+
+dependencies:
+  '@abw/badger-database': 1.1.26
+  dotenv: 16.0.3
+  mysql2: 3.2.0
+
+packages:
+
+  /@abw/badger-codecs/1.0.2:
+    resolution: {integrity: sha512-L8w3z+7MXiKZwRxSRYclKtk1+vWCbFKEDIfzN+xgpTBsHSox+36GdpbA1BoC+bJWSSagU5upYnOzStaGdnripg==}
+    dependencies:
+      '@abw/badger-utils': 1.0.18
+      js-yaml: 4.1.0
+    dev: false
+
+  /@abw/badger-database/1.1.26:
+    resolution: {integrity: sha512-wenPBBmDdSNk2EPTaCY+gGgQ/hDwW7UfvNannFfmQAJUHyHS2/kc27X6vM67fEaHf1UWLyLtgQSfFk3twP1CAQ==}
+    dependencies:
+      '@abw/badger': 1.1.10
+      '@abw/badger-utils': 1.0.18
+      proxymise: 1.0.2
+      tarn: 3.0.2
+    dev: false
+
+  /@abw/badger-filesystem/1.0.2:
+    resolution: {integrity: sha512-dQ0Wjs+N/owZ2zkJVyMBuKLZC3lVOg5/sVWmnHP5jAxdiEhJSqdKN69c43xMeL7HvwpJPt4swels9zO9c9uQ7w==}
+    dependencies:
+      '@abw/badger-codecs': 1.0.2
+      '@abw/badger-utils': 1.0.18
+    dev: false
+
+  /@abw/badger-timestamp/1.0.4:
+    resolution: {integrity: sha512-7JBcF9rxwihiiEG1UQlv1/jdntg8BJmzTADAj5psTWbRNvDh4XHkdeoVnbf0nRCq08q5472mx8wbpgNzrwb2RQ==}
+    dependencies:
+      '@abw/badger-utils': 1.0.18
+    dev: false
+
+  /@abw/badger-utils/1.0.18:
+    resolution: {integrity: sha512-K1r/KztMVKxU7M1KQIfZw0s0mHuXo/WxqYIlb/2+bZmt1ZFnvR6bNjxrwdQ0dSYbw1C5+CU/VnpkY1Ybl7FooQ==}
+    dev: false
+
+  /@abw/badger/1.1.10:
+    resolution: {integrity: sha512-BU5gKWPG+K9HT4xa0jMzvXPlbP18AZvte2c4yQUEY2q6CvwdEU0Yn4/KyOxKfGuTcvlYgwa3rBdw2hIXMkwDiQ==}
+    dependencies:
+      '@abw/badger-codecs': 1.0.2
+      '@abw/badger-filesystem': 1.0.2
+      '@abw/badger-timestamp': 1.0.4
+      '@abw/badger-utils': 1.0.18
+      commander: 9.5.0
+      dotenv: 16.0.3
+      js-yaml: 4.1.0
+      prompts: 2.4.2
+    dev: false
+
+  /argparse/2.0.1:
+    resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
+    dev: false
+
+  /commander/9.5.0:
+    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
+
+  /denque/2.1.0:
+    resolution: {integrity: sha512-HVQE3AAb/pxF8fQAoiqpvg9i3evqug3hoiwakOyZAwJm+6vZehbkYXZ0l4JxS+I3QxM97v5aaRNhj8v5oBhekw==}
+    engines: {node: '>=0.10'}
+    dev: false
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /generate-function/2.3.1:
+    resolution: {integrity: sha512-eeB5GfMNeevm/GRYq20ShmsaGcmI81kIX2K9XQx5miC8KdHaC6Jm0qQ8ZNeGOi7wYB8OsdxKs+Y2oVuTFuVwKQ==}
+    dependencies:
+      is-property: 1.0.2
+    dev: false
+
+  /iconv-lite/0.6.3:
+    resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+
+  /is-property/1.0.2:
+    resolution: {integrity: sha512-Ks/IoX00TtClbGQr4TWXemAnktAQvYB7HzcCxDGqEZU6oCmb2INHuOoKxbtR+HFkmYWBKv/dOZtGRiAjDhj92g==}
+    dev: false
+
+  /js-yaml/4.1.0:
+    resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
+    hasBin: true
+    dependencies:
+      argparse: 2.0.1
+    dev: false
+
+  /kleur/3.0.3:
+    resolution: {integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==}
+    engines: {node: '>=6'}
+    dev: false
+
+  /long/5.2.1:
+    resolution: {integrity: sha512-GKSNGeNAtw8IryjjkhZxuKB3JzlcLTwjtiQCHKvqQet81I93kXslhDQruGI/QsddO83mcDToBVy7GqGS/zYf/A==}
+    dev: false
+
+  /lru-cache/7.18.3:
+    resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
+    engines: {node: '>=12'}
+    dev: false
+
+  /mysql2/3.2.0:
+    resolution: {integrity: sha512-0Vn6a9WSrq6fWwvPgrvIwnOCldiEcgbzapVRDAtDZ4cMTxN7pnGqCTx8EG32S/NYXl6AXkdO+9hV1tSIi/LigA==}
+    engines: {node: '>= 8.0'}
+    dependencies:
+      denque: 2.1.0
+      generate-function: 2.3.1
+      iconv-lite: 0.6.3
+      long: 5.2.1
+      lru-cache: 7.18.3
+      named-placeholders: 1.1.3
+      seq-queue: 0.0.5
+      sqlstring: 2.3.3
+    dev: false
+
+  /named-placeholders/1.1.3:
+    resolution: {integrity: sha512-eLoBxg6wE/rZkJPhU/xRX1WTpkFEwDJEN96oxFrTsqBdbT5ec295Q+CoHrL9IT0DipqKhmGcaZmwOt8OON5x1w==}
+    engines: {node: '>=12.0.0'}
+    dependencies:
+      lru-cache: 7.18.3
+    dev: false
+
+  /prompts/2.4.2:
+    resolution: {integrity: sha512-NxNv/kLguCA7p3jE8oL2aEBsrJWgAakBpgmgK6lpPWV+WuOmY6r2/zbAVnP+T8bQlA0nzHXSJSJW0Hq7ylaD2Q==}
+    engines: {node: '>= 6'}
+    dependencies:
+      kleur: 3.0.3
+      sisteransi: 1.0.5
+    dev: false
+
+  /proxymise/1.0.2:
+    resolution: {integrity: sha512-ulIs+1o/y6o1B9wJiHT/SIy3QAO5HjxbikdWWrtd3pkqlC3IBcR69z7y3U2ycbbUZeQijQkgXLTqBSiIMK/3xA==}
+    dev: false
+
+  /safer-buffer/2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: false
+
+  /seq-queue/0.0.5:
+    resolution: {integrity: sha512-hr3Wtp/GZIc/6DAGPDcV4/9WoZhjrkXsi5B/07QgX8tsdc6ilr7BFM6PM6rbdAX1kFSDYeZGLipIZZKyQP0O5Q==}
+    dev: false
+
+  /sisteransi/1.0.5:
+    resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+    dev: false
+
+  /sqlstring/2.3.3:
+    resolution: {integrity: sha512-qC9iz2FlN7DQl3+wjwn3802RTyjCx7sDvfQEXchwa6CWOx07/WVfh91gBmQ9fahw8snwGEWU3xGzOt4tFyHLxg==}
+    engines: {node: '>= 0.6'}
+    dev: false
+
+  /tarn/3.0.2:
+    resolution: {integrity: sha512-51LAVKUSZSVfI05vjPESNc5vwqqZpbXCsU+/+wxlOrUjk2SnFTt97v9ZgQrD4YmxYW1Px6w2KjaDitCfkvgxMQ==}
+    engines: {node: '>=8.0.0'}
+    dev: false

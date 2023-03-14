@@ -1,0 +1,11 @@
+#!/bin/bash
+# connect to mysql through host proxy port
+source .env
+mysql \
+    --host=localhost \
+    --protocol=TCP \
+    --port=$HOST_DATABASE_PORT \
+    --user=$MYSQL_USER \
+    --password=$MYSQL_PASSWORD \
+    --prompt="$MYSQL_DATABASE proxy > " \
+    $MYSQL_DATABASE

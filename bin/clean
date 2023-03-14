@@ -1,0 +1,63 @@
+#!/bin/bash
+
+# exit on failure
+set -e
+
+# load up the environment variables
+source .env
+
+# ANSI colours
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+BROWN='\033[0;33m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+RESET='\033[0m'
+
+# database data directory and image
+DB_DIR=database
+DB_DATA_DIR=$DB_DIR/data
+DB_IMAGE=database
+
+function delete_data_dir {
+    local DATA_DIR="$1"
+
+    if [ -d $DATA_DIR ]; then
+        echo -e "\n${YELLOW}Deleting data files\n${BROWN}  from: ${CYAN}${DATA_DIR}${RESET}\n"
+        pushd $DATA_DIR > /dev/null
+        rm -fr *
+        popd > /dev/null
+        rmdir $DATA_DIR
+    else
+        echo -e "\n${GREEN}The $DATA_DIR directory is already deleted${RESET}"
+    fi
+}
+
+function delete_image {
+    local IMAGE="$1"
+    docker image inspect $IMAGE > /dev/null 2>&1
+
+    if [ $? -eq 0 ]; then
+        echo -e "\n${YELLOW}Deleting image\n${BROWN}  from: ${CYAN}${IMAGE}${RESET}\n"
+        docker image rm $IMAGE
+    else
+        echo -e "\n${GREEN}The $IMAGE image is already deleted${RESET}"
+    fi
+}
+
+#======================================================================
+# Main
+#======================================================================
+
+# Blurby blurbs
+echo -e "${YELLOW}Docker Cleanup\n${BROWN}--------------\n"
+echo -e "${CYAN}This script will cleanup the Docker projects for a fresh start."
+echo -e "It deletes the contents of the database/data directory and deletes the"
+echo -e "test_database image.\n"
+echo -e "After running this script you should run bin/build"
+
+delete_data_dir $DB_DATA_DIR
+delete_image $DB_IMAGE
+
+echo -e "\n${GREEN}All done.  You may now do the Happy Badger Dance${RESET}\n"
+

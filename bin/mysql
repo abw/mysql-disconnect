@@ -1,0 +1,10 @@
+#!/bin/bash
+# connect to database container and run mysql
+source .env
+docker compose exec \
+    database \
+    mysql \
+        --user=$MYSQL_USER \
+        --password=$MYSQL_PASSWORD \
+        --prompt="$MYSQL_DATABASE > " \
+        $MYSQL_DATABASE

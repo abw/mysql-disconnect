@@ -1,0 +1,6 @@
+#!/bin/bash
+# connect to container and run bash
+source .env
+docker compose exec -it \
+    database \
+    /bin/bash
