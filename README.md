@@ -137,7 +137,7 @@ $ pnpm install
 $ cd ..
 ```
 
-NOTE: you need to run the script from the parent directory so that `dotenv`
+NOTE: you need to run the scripts from the parent directory so that `dotenv`
 can find the `.env` file.s
 
 The first script [01_connection.js](jsapp/01_connection.js) uses a direct
